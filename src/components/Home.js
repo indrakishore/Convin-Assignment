@@ -10,7 +10,7 @@ const Home = () => {
   const [showSpinner, setShowSpinner] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3000/categories")
+    fetch(`${process.env.REACT_APP_BASE_URL}/categories`)
       .then((res) => res.json())
       .then((json) => {
         setCategories(json);
@@ -28,7 +28,14 @@ const Home = () => {
           Convin
         </span>
       </Header>
-      <Content style={{ backgroundColor: "#1677ff", minHeight: "87vh", maxHeight: "87vh", overflowY: 'auto' }}>
+      <Content
+        style={{
+          backgroundColor: "#1677ff",
+          minHeight: "87vh",
+          maxHeight: "87vh",
+          overflowY: "auto",
+        }}
+      >
         {showSpinner ? (
           <Spinner fullHeight />
         ) : (

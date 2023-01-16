@@ -31,7 +31,7 @@ const DetailCard = (props) => {
   ];
 
   const onEditCard = (values) => {
-    fetch(`http://localhost:3000/videos/${cardData.id}`, {
+    fetch(`${process.env.REACT_APP_BASE_URL}/videos/${cardData.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

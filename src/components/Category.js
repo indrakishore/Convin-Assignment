@@ -17,7 +17,7 @@ const Category = ({ name, id }) => {
   });
 
   useEffect(() => {
-    fetch(`http://localhost:3000/categories/${id}/videos`)
+    fetch(`${process.env.REACT_APP_BASE_URL}/categories/${id}/videos`)
       .then((res) => res.json())
       .then((json) => {
         setCards(json);
@@ -29,7 +29,7 @@ const Category = ({ name, id }) => {
 
 
   const deleteCard = (video) => {
-    fetch(`http://localhost:3000/videos/${video.id}`, { method: "DELETE" })
+    fetch(`${process.env.REACT_APP_BASE_URL}/videos/${video.id}`, { method: "DELETE" })
       .then(() => {
         setAlert({
           visible: true,
@@ -49,7 +49,7 @@ const Category = ({ name, id }) => {
 
 
   const onCreateCard = (values) => {
-    fetch("http://localhost:3000/videos", {
+    fetch(`${process.env.REACT_APP_BASE_URL}/videos`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
