@@ -1,0 +1,13 @@
+.div-home{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 15px;
+    background-color: lightgray;
+}
+
+.header{
+    color: whitesmoke;
+    font-size: 25px;
+    font-weight: bold;
+}
